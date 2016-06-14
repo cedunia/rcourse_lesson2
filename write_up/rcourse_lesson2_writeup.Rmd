@@ -1,0 +1,44 @@
+---
+title: 'R Course: lesson 2'
+author: "Cédric HASSEN-KHODJA"
+date: "14 juin 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+load("rcourse_lesson2_environment.RData")
+```
+
+# Introduction
+
+I looked at how common my name, "Cedric", is in the United States population both by year and sex.
+
+# Results
+
+## Prevalence by Year
+
+Below is a plot for how the proportion of people with the name "Cedric" (log base 10 transformed) has changed over time. Data aren't normal in this case.Interpretation of result is dificult.
+```{r, fig.align='center'}
+year.plot
+```
+To test if there is a significant effect of year a linear model was built. Proportion of the population log base 10 transformed was the dependent variable and year the independent variable. As shown below, year was not significant.
+```{r}
+year.lm
+```
+
+## Prevalence by Sex
+
+Below is a plot for the proportion of people with the name "Page" (log base 10 transformed) by sex. It appears there is a clear effect of sex, where it is a less popular name for females than males.
+
+```{r, fig.align='center'}
+sex.plot
+```
+
+To test if there is a significant effect of sex a linear model was built. Proportion of the population log base 10 transformed was the dependent variable and sex the independent variable. As show below, sex was significant, with the name being less common in females than males.
+
+```{r}
+sex.lm_sum
+```
+
+# Conclusion
+Cedric is more common in males than females.
